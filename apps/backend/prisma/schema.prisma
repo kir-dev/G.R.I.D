@@ -26,4 +26,15 @@ model SessionType {
   pointsForPositions Int[]
   seriesId           Int?
   // TODO referencia a Series-re, amikor a Series-t elkeszitjuk
+
+  session Session[]
+}
+
+model Session {
+  id            Int         @id @default(autoincrement())
+  date          DateTime
+  weekendId     Int
+  // TODO relacio a Weekend-re annak elkeszultekor
+  sessiontypeId Int
+  sessiontype   SessionType @relation(fields: [sessiontypeId], references: [id])
 }
