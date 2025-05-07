@@ -17,3 +17,13 @@ model User {
   authSchId String @id
   email     String @unique
 }
+
+model SessionType {
+  id                 Int     @id @default(autoincrement())
+  name               String
+  length             Int // duration in minutes
+  hasPoints          Boolean // true if points are awarded, false otherwise
+  pointsForPositions Int[]
+  seriesId           Int?
+  // TODO referencia a Series-re, amikor a Series-t elkeszitjuk
+}
