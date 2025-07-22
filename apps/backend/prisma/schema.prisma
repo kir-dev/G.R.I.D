@@ -27,3 +27,9 @@ model SessionType {
   seriesId           Int?
   // TODO referencia a Series-re, amikor a Series-t elkeszitjuk
 }
+
+//fennebb van még egy User, így nem tudtam ennek is User nevet adni
+model UserEntity {
+  id   Int    @id @default(autoincrement())
+  name String
+}
