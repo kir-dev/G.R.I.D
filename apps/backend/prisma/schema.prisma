@@ -27,3 +27,13 @@ model SessionType {
   seriesId           Int?
   // TODO referencia a Series-re, amikor a Series-t elkeszitjuk
 }
+
+model Weekend {
+  id       Int     @id @default(autoincrement())
+  name     String
+  location String
+  track    String?
+  seriesId Int
+  //Todo A weekend belongs to one series.
+  //Todo A weekend has multiple sessions (Session[])
+}
