@@ -27,3 +27,14 @@ model SessionType {
   seriesId           Int?
   // TODO referencia a Series-re, amikor a Series-t elkeszitjuk
 }
+
+model Driver {
+  id          Int    @id @default(autoincrement())
+  name        String
+  point       Int
+  seriesId    Int
+  team        String
+  nationality String
+  //Todo series: Connect Driver to a Series
+  //Todo Also prepare for future relation with Session
+}
